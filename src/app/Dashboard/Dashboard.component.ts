@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Product } from "../models/Product.model";
+import { ProductService } from "../services/ProductService.service";
 import { UserService } from "../services/UserService.service";
 
 @Component({
@@ -8,9 +10,12 @@ import { UserService } from "../services/UserService.service";
     styleUrls:['./Dashboard.component.css']
 })
 export class DashboardComponent implements OnInit{
-    constructor(private router:Router,private userService:UserService) {}
+    constructor(private router:Router,private userService:UserService,private productService:ProductService) {}
 
     currentUser:any =undefined;
+    productList:any;
+
+
 
     // kullanıcı çıkışında localstoragei siler ve giriş ekranına yönlendirir.
     logout(){
@@ -26,6 +31,10 @@ export class DashboardComponent implements OnInit{
         }else{
             this.router.navigate(['./SignIn'])
         }
+        this.productService.getProductList().subscribe((res)=>{
+            res as Product[];
+            this.productList=res;
+        })
     }
 
 }

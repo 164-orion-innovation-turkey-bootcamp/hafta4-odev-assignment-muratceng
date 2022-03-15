@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CardComponent } from './Components/Card/Card.component';
 import { DashboardComponent } from './Dashboard/Dashboard.component';
 import { SignInComponent } from './SignIn/SignIn.component';
 import { SignUpComponent } from './SignUp/SignUp.component';
@@ -15,7 +16,8 @@ import { SignUpComponent } from './SignUp/SignUp.component';
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    DashboardComponent
+    DashboardComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

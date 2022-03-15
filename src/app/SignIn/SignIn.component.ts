@@ -19,6 +19,7 @@ export class SignInComponent implements OnInit {
 
         //Kullanıcı girişi varsa sayfayı dashboarda yönlendirir.
         if(this.userService.isLogIn()){
+            console.log("kullanıcı var")
             this.router.navigate(['./Dashboard'])
         }
         
