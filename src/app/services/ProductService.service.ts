@@ -10,4 +10,8 @@ export class ProductService{
     getProductList(){
         return this.http.get("http://localhost:3000/products")
     }
+
+    getProductById(id:String){
+        return this.http.get("http://localhost:3000/products/"+id);
+    }
 }

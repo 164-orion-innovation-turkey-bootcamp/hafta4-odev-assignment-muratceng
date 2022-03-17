@@ -1,7 +1,3 @@
-.card{
-    margin-top: 5rem;
-    margin-right: 2rem;
-}
-.card img{
-    height: 20rem;
+.container{
+    flex-direction: row;
 }

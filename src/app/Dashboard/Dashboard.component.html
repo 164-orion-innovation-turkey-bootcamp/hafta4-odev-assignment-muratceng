@@ -1,11 +1,13 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd">
-  <a class="navbar-brand ms-5">Navbar</a>
-  <button class="navbar-brand btn btn-link border border-secondary me-5" (click)="logout()">
-    logout
-  </button>
-</nav>
+<Navbar-selector></Navbar-selector>
 
-<card-selector *ngFor="let item of productList" [product]="item"></card-selector>
+<div class="container mt-5 mb-5">
+  <div class="row">
+      <card-selector class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let item of productList" [product]="item"></card-selector>
+  </div>
+</div>
+
+<Footer-selector></Footer-selector>
+
 
   
     

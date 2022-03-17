@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -8,9 +9,17 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class CardComponent implements OnInit{
 
+    constructor(private router:Router){}
     @Input() product:any;
     ngOnInit(): void {
-        console.log(this.product);
+        
     }
 
+    goDetails(){
+        this.router.navigate(['Product/Details',this.product.id]);
+    }
+
+    addToCard(){
+        console.log("ekleme",this.product.id);
+    }
 }
