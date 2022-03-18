@@ -17,6 +17,5 @@ export class Product{
         this.price=price;
         this.mainCategory=mainCategory;
         this.category=category;
-
     }
 }

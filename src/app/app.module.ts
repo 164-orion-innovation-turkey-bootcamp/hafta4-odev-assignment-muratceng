@@ -13,6 +13,8 @@ import { SignUpComponent } from './SignUp/SignUp.component';
 import { ProductDetailsComponent } from './ProductDetails/ProductDetails.component';
 import { NavbarComponent } from './Components/Navbar/Navbar.component';
 import { FooterComponent } from './Components/Footer/Footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselComponent } from './Components/Carousel/Carousel.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { FooterComponent } from './Components/Footer/Footer.component';
     CardComponent,
     ProductDetailsComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { FooterComponent } from './Components/Footer/Footer.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
