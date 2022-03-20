@@ -17,4 +17,8 @@ export class NavbarComponent implements OnInit{
         localStorage.clear();
         this.router.navigate(['./SignIn'])
     }
+
+    goHome(){
+        this.router.navigate(['./Dashboard'])
+    }
 }

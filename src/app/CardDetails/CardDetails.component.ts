@@ -9,6 +9,7 @@ import { ShoppingCardService } from "../services/ShoppingCard.service";
 })
 export class CardDetailsComponent implements OnInit{
     products=this.cardService.getItems();   
+    totalPrice=this.cardService.getTotalPrice();
     constructor(private cardService:ShoppingCardService){}
     ngOnInit(): void {
 

@@ -13,6 +13,10 @@ export class ShoppingCardService{
         this.AddLocalStorage();
         console.log(this.products);
     } 
+
+    deleteFromCard(){
+        
+    }
     
     getItems(){
         console.log(this.products);
@@ -37,5 +41,13 @@ export class ShoppingCardService{
     // getLocalStorage() den gelen objede name propertysi varsa true yoksa false döner.
     localStorageInfo(){
         return this.getLocalStorage().hasOwnProperty("0")==true
+    }
+
+    getTotalPrice(){
+        let price=0;
+        for(let i =0; i<this.products.length;i++){
+            price+=this.products[i].price;
+        }
+        return price;
     }
 }
