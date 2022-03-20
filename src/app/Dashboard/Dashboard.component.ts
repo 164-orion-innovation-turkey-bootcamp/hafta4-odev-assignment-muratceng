@@ -34,4 +34,7 @@ export class DashboardComponent implements OnInit{
         })
     }
 
+    GoDetails(){
+        this.router.navigate(['./CardDetails'])
+    }
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { ShoppingCardService } from "src/app/services/ShoppingCard.service";
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Router } from "@angular/router";
 })
 export class CardComponent implements OnInit{
 
-    constructor(private router:Router){}
+    constructor(private router:Router,private cardService:ShoppingCardService){}
     @Input() product:any;
     ngOnInit(): void {
         
@@ -20,6 +21,6 @@ export class CardComponent implements OnInit{
     }
 
     addToCard(){
-        console.log("ekleme",this.product.id);
+        this.cardService.addToCard(this.product);
     }
 }

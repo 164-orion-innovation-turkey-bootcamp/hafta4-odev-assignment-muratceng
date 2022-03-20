@@ -8,3 +8,8 @@
     object-fit: cover;
     cursor: pointer;
 }
+
+.price{
+    font-weight: bold;
+    background-color: rgb(240, 240, 240);
+}

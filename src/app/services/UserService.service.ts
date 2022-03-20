@@ -28,4 +28,9 @@ export class UserService{
     addUser(user:any){
         return this.http.post("http://localhost:3000/user",user)
     }
+
+    // aldığı user i localstorage a yazar.
+    writeLocalStorage(user: User) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+    }
 }

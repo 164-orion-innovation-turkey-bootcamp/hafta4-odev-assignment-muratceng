@@ -39,7 +39,7 @@ export class SignInComponent implements OnInit {
     onSubmit() {
         if(this.checkUser()){
             let user = this.users.find((user)=>user.email==this.signInForm.get('email')?.value)
-            this.writeLocalStorage(user as User);
+            this.userService.writeLocalStorage(user as User);
             this.router.navigate(['/Dashboard']);
         }else{
             this.errors ='email or password is not correct'
@@ -58,10 +58,7 @@ export class SignInComponent implements OnInit {
         return isLogged;
     }
 
-    // aldığı user i localstorage a yazar.
-    writeLocalStorage(user: User) {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-    }
+    
 
     // kayıt formuna yönlendirir.
     signUp() {

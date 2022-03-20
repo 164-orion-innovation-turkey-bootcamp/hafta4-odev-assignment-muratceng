@@ -15,6 +15,7 @@ import { NavbarComponent } from './Components/Navbar/Navbar.component';
 import { FooterComponent } from './Components/Footer/Footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './Components/Carousel/Carousel.component';
+import { CardDetailsComponent } from './CardDetails/CardDetails.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CarouselComponent } from './Components/Carousel/Carousel.component';
     ProductDetailsComponent,
     NavbarComponent,
     FooterComponent,
-    CarouselComponent
+    CarouselComponent,
+    CardDetailsComponent
   ],
   imports: [
     BrowserModule,

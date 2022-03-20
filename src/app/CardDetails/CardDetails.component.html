@@ -1,0 +1,12 @@
+<Navbar-selector></Navbar-selector>
+
+<div class="container">
+<ul *ngIf="products">
+    <li *ngFor="let item of products">
+        <div>{{item.title}}</div>
+        <div>{{item.price | currency:'TRY '}}</div>
+    </li>
+</ul>
+</div>
+
+<Footer-selector></Footer-selector>

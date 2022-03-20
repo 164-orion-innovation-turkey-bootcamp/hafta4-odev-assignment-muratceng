@@ -1,5 +1,6 @@
 import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CardDetailsComponent } from './CardDetails/CardDetails.component';
 import { DashboardComponent } from './Dashboard/Dashboard.component';
 import { ProductDetailsComponent } from './ProductDetails/ProductDetails.component';
 import { SignInComponent } from './SignIn/SignIn.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   },
   { path: 'Dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/SignIn', pathMatch: 'full' },
+  {path:'CardDetails', component:CardDetailsComponent}
   //{ path: '**', redirectTo: '/SignIn' }
 ];
 

@@ -3,7 +3,9 @@
     <div class="card-body d-flex flex-column">
       <h5 class="card-title">{{product.title}}</h5>
       <p class="card-text">{{product.shortdescription}}</p>
-      <p class="card-text mt-auto">{{product.price}}</p>
+      <p class="text-center mt-auto">
+      <span class="card-text price mt-auto"> {{product.price | currency:'TRY '}} </span>
+      </p>
       <span class="mt-auto">
       <button (click)="goDetails()" class="btn btn-primary">Go Details</button>
       <button (click)="addToCard()" class="btn btn-primary  ms-3">Add to Basket</button>
