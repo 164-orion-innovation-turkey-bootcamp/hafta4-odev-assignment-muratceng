@@ -1,21 +1,39 @@
 import { Injectable } from "@angular/core";
 import { Product } from "../models/Product.model";
+import { ShoppingCardItem } from "../models/ShoppingCardItem.model";
 
 @Injectable({
     providedIn:"root"
 })
 export class ShoppingCardService{
 
-    products:Product[] = this.localStorageInfo() ? this.getLocalStorage() : [];
+    products:ShoppingCardItem[] = this.localStorageInfo() ? this.getLocalStorage() : [];
 
-    addToCard(product:Product){
-        this.products.push(product);
+    addToCard(product:ShoppingCardItem){
+        let flag=false;
+        for(let i=0;i<this.products.length;i++){
+            if(this.products[i].title == product.title){
+                this.products[i].quantity++;
+                flag=true;
+            }
+        }
+        if(!flag){
+            this.products.push(product);
+        }
         this.AddLocalStorage();
         console.log(this.products);
+        return this.products;
     } 
 
-    deleteFromCard(){
+    updateItem(){
         
+    }
+
+    deleteFromCard(title:String){
+        this.products =this.products.filter((item)=> item.title !=title);
+        console.log(this.products);
+        this.AddLocalStorage();
+        return this.products;
     }
     
     getItems(){
@@ -46,7 +64,7 @@ export class ShoppingCardService{
     getTotalPrice(){
         let price=0;
         for(let i =0; i<this.products.length;i++){
-            price+=this.products[i].price;
+            price += this.products[i].price * this.products[i].quantity;
         }
         return price;
     }

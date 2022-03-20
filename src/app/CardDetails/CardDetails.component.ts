@@ -15,7 +15,11 @@ export class CardDetailsComponent implements OnInit{
 
     }
 
-    
+    deleteProduct(title:String){
+        console.log(title);
+        this.products=this.cardService.deleteFromCard(title);
+        this.totalPrice=this.cardService.getTotalPrice();
+    }
 
 
 

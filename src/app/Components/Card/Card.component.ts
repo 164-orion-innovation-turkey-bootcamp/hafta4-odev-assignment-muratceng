@@ -12,6 +12,7 @@ export class CardComponent implements OnInit{
 
     constructor(private router:Router,private cardService:ShoppingCardService){}
     @Input() product:any;
+    showMessage =false;
     ngOnInit(): void {
         
     }
@@ -21,6 +22,19 @@ export class CardComponent implements OnInit{
     }
 
     addToCard(){
-        this.cardService.addToCard(this.product);
+        let tmp={
+            title : this.product.title,
+            price:this.product.price,
+            quantity:1
+        }
+        this.cardService.addToCard(tmp);
+        this.showMessage=true;
+        this.messageTimer();
+    }
+
+    messageTimer(){
+        setTimeout(() => {
+            this.showMessage=false;
+        },1000);
     }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { faCartShopping, faSignOut } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
     selector:'Navbar-selector',
@@ -8,6 +9,8 @@ import { Router } from "@angular/router";
 })
 export class NavbarComponent implements OnInit{
     constructor(private router:Router){}
+    faShoppinCard = faCartShopping
+    falogout = faSignOut
     ngOnInit(): void {
         
     }

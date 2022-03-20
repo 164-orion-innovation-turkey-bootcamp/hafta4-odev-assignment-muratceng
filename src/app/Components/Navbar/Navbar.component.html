@@ -1,6 +1,9 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd">
-    <a (click)="goHome()" class="homeLink navbar-brand ms-5">Murat Store</a>
+    <a (click)="goHome()" class="homeLink navbar-brand ms-5">
+      Murat Store</a>
+    <fa-icon [icon]="faShoppinCard"></fa-icon>
     <button class="navbar-brand btn btn-link border border-secondary me-5" (click)="logOut()">
+      <span><fa-icon [icon]="falogout"></fa-icon></span>
       logout
     </button>
   </nav>

@@ -9,6 +9,9 @@
       <span class="mt-auto">
       <button (click)="goDetails()" class="btn btn-primary">Go Details</button>
       <button (click)="addToCard()" class="btn btn-primary  ms-3">Add to Basket</button>
+      <div *ngIf="showMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        Product added to Card
+      </div>
     </span>
     </div>
 </div>

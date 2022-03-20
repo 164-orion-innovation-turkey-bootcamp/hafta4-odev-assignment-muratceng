@@ -1,12 +1,24 @@
 <Navbar-selector></Navbar-selector>
 
 <div class="container mt-5" *ngIf="products.length>0">
-<ul >
-    <li *ngFor="let item of products">
-        <div>{{item.title}}</div>
-        <div>{{item.price | currency:'TRY '}}</div>
-    </li>
-</ul>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Delete Product</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of products">
+            <td>{{item.title}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
+            <td><button (click)="deleteProduct(item.title)" class="btn btn-danger text-center"> X </button></td>
+          </tr>
+        </tbody>
+      </table>
 <h1>Total price: {{totalPrice | currency:'TRY '}}</h1>
 <button class="btn btn-primary mb-5">Approval your order</button>
 </div>

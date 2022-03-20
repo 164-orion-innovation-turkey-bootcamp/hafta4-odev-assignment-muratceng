@@ -16,6 +16,7 @@ import { FooterComponent } from './Components/Footer/Footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './Components/Carousel/Carousel.component';
 import { CardDetailsComponent } from './CardDetails/CardDetails.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CardDetailsComponent } from './CardDetails/CardDetails.component';
     ReactiveFormsModule,
     RouterModule,
     NgbModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
