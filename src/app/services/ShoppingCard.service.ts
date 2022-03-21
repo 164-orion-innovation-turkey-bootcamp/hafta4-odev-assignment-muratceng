@@ -7,16 +7,26 @@ import { ShoppingCardItem } from "../models/ShoppingCardItem.model";
 })
 export class ShoppingCardService{
 
+    // shoppincarditemlerin bulunduğu products tanımlanmıştır. localstorageda ilgili bilgi varsa ordan çekilir yoksa boş liste.
     products:ShoppingCardItem[] = this.localStorageInfo() ? this.getLocalStorage() : [];
 
+    /**
+     * This function add ShoppingCardItem to list.
+     * 
+     * @param product 
+     * @returns ShoppingCardItem list
+     */
     addToCard(product:ShoppingCardItem){
+        //flag ile bu itemin daha önceden eklenip eklenmediği kontrol edilmiştir.
         let flag=false;
         for(let i=0;i<this.products.length;i++){
+            //listede daha önce varsa adeti artırılır.
             if(this.products[i].title == product.title){
                 this.products[i].quantity++;
                 flag=true;
             }
         }
+        //daha önce eklenmemiş ise değişikliğe uğramadan listeye eklenir.
         if(!flag){
             this.products.push(product);
         }
@@ -24,6 +34,12 @@ export class ShoppingCardService{
         return this.products;
     } 
 
+    /**
+     * This function update ShoppingCardıtem and set list.
+     * 
+     * @param item 
+     * @returns ShoppingCardItem list
+     */
     updateItem(item:ShoppingCardItem){
         for(let i=0;i<this.products.length;i++){
             if(this.products[i].title == item.title){
@@ -34,12 +50,23 @@ export class ShoppingCardService{
         return this.products;
     }
 
+    /**
+     * This function delete ShoppingCardItem by title.
+     * 
+     * @param title 
+     * @returns ShoppingCardItem list
+     */
     deleteFromCard(title:String){
         this.products =this.products.filter((item)=> item.title !=title);
         this.AddLocalStorage();
         return this.products;
     }
 
+    /**
+     * This function create Object array and returns it
+     * 
+     * @returns Object array
+     */
     getProductIdQuantityList(){
         let products=[];
         for(let i=0;i<this.products.length;i++){
@@ -49,17 +76,30 @@ export class ShoppingCardService{
         return products;
     }
     
+    /**
+     * This function returns ShoppingCard
+     * 
+     * @returns list
+     */
     getItems(){
         return this.products;
 
     }
 
+    /**
+     * This function clear the ShoppingCard
+     * 
+     * @returns 
+     */
     clearCart(){
         this.products=[];
         localStorage.removeItem('shoppingCard');
         return this.products;
     }
 
+    /**
+     * This function add ShoppingCard to localstorage 
+     */
     AddLocalStorage(){
         localStorage.setItem('shoppingCard',JSON.stringify(this.products))
     }
@@ -74,6 +114,11 @@ export class ShoppingCardService{
         return this.getLocalStorage().hasOwnProperty("0")==true
     }
 
+    /**
+     * This function calculate the total price for ShoppinCard and returns it. 
+     * 
+     * @returns number
+     */
     getTotalPrice(){
         let price=0;
         for(let i =0; i<this.products.length;i++){
