@@ -24,4 +24,8 @@ export class NavbarComponent implements OnInit{
     goHome(){
         this.router.navigate(['./Dashboard'])
     }
+
+    cardDetails(){
+        this.router.navigate(['./CardDetails'])
+    }
 }

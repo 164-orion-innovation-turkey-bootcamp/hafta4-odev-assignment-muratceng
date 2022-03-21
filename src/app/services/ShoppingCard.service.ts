@@ -21,23 +21,26 @@ export class ShoppingCardService{
             this.products.push(product);
         }
         this.AddLocalStorage();
-        console.log(this.products);
         return this.products;
     } 
 
-    updateItem(){
-        
+    updateItem(item:ShoppingCardItem){
+        for(let i=0;i<this.products.length;i++){
+            if(this.products[i].title == item.title){
+                this.products[i].quantity = item.quantity;
+            }
+        }
+        this.AddLocalStorage();
+        return this.products;
     }
 
     deleteFromCard(title:String){
         this.products =this.products.filter((item)=> item.title !=title);
-        console.log(this.products);
         this.AddLocalStorage();
         return this.products;
     }
     
     getItems(){
-        console.log(this.products);
         return this.products;
 
     }

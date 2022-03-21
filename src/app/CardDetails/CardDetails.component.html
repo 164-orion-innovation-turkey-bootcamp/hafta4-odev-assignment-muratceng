@@ -1,6 +1,6 @@
 <Navbar-selector></Navbar-selector>
 
-<div class="container mt-5" *ngIf="products.length>0">
+<div class="container mt-5"  *ngIf="products.length>0">
     <table class="table">
         <thead>
           <tr>
@@ -13,18 +13,31 @@
         <tbody>
           <tr *ngFor="let item of products">
             <td>{{item.title}}</td>
-            <td>{{item.price}}</td>
-            <td>{{item.quantity}}</td>
+            <td>{{item.price | currency:'TRY '}}</td>
+            <td>
+              <button *ngIf="item.quantity==1" disabled (click)="decreaseQuantity(item)">-</button>
+                <button *ngIf="item.quantity>1" (click)="decreaseQuantity(item)">-</button>
+                <input type="number" value={{item.quantity}} id="number" disabled="false" min="0" max="100" style="width: 40px; text-align: center;"/>
+                <button  (click)="increaseQuantity(item)">+</button>
+            </td>
             <td><button (click)="deleteProduct(item.title)" class="btn btn-danger text-center"> X </button></td>
           </tr>
         </tbody>
       </table>
 <h1>Total price: {{totalPrice | currency:'TRY '}}</h1>
 <button class="btn btn-primary mb-5">Approval your order</button>
+<button (click)="goHome()" class="btn btn-primary mb-5 ms-5">Back To Shopping</button>
 </div>
+  
+  <div *ngIf="!(products.length>=1)" class="w-100 h-100 d-flex align-items-center justify-content-center" >
+    <div class="container w-25 ">
+  <p>There are no items in your Shopping Card
+    <span></span>
+  </p>
+  <button (click)="goHome()" class="btn btn-primary ">Back To Shopping</button>
+    </div>
+  </div>
 
-<div class="container" *ngIf="!(products.length>0)">
-    <p>There are no items in your cart</p>
-</div>
-
+  <div class="mt-5" style="position: fixed; bottom: 0; width: 100%;">
 <Footer-selector ></Footer-selector>
+</div>
