@@ -40,12 +40,13 @@ export class ShoppingCardService{
         return this.products;
     }
 
-    getProductIdList(){
-        let product_ids=[];
+    getProductIdQuantityList(){
+        let products=[];
         for(let i=0;i<this.products.length;i++){
-            product_ids.push(this.products[i].id);
+            products.push({id:this.products[i].id, quantity:this.products[i].quantity});
         }
-        return product_ids;
+        console.log(products);
+        return products;
     }
     
     getItems(){

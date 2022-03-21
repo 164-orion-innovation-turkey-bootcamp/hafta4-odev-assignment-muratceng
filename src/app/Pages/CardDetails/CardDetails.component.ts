@@ -62,9 +62,10 @@ export class CardDetailsComponent implements OnInit {
     setOrder() {
         let order = {
             user_id: this.currentUser.id,
-            product_ids: this.cardService.getProductIdList(),
+            products: this.cardService.getProductIdQuantityList(),
             price: this.cardService.getTotalPrice()
         }
+        console.log(order);
         this.orderService.addOrder(order).subscribe((res) => {
             console.log(res);
         });
