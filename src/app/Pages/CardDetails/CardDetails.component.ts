@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Product } from "../models/Product.model";
-import { ShoppingCardItem } from "../models/ShoppingCardItem.model";
-import { User } from "../models/User.model";
-import { OrderService } from "../services/OrderService.service";
-import { ShoppingCardService } from "../services/ShoppingCard.service";
-import { UserService } from "../services/UserService.service";
+import { Product } from "../../models/Product.model";
+import { ShoppingCardItem } from "../../models/ShoppingCardItem.model";
+import { User } from "../../models/User.model";
+import { OrderService } from "../../services/OrderService.service";
+import { ShoppingCardService } from "../../services/ShoppingCard.service";
+import { UserService } from "../../services/UserService.service";
 
 @Component({
     selector: 'CardDetails-selector',

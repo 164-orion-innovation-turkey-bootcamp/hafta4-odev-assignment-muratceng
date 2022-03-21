@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Product } from '../models/Product.model';
-import { ProductService } from '../services/ProductService.service';
-import { ShoppingCardService } from '../services/ShoppingCard.service';
+import { Product } from '../../models/Product.model';
+import { ProductService } from '../../services/ProductService.service';
+import { ShoppingCardService } from '../../services/ShoppingCard.service';
 
 @Component({
   selector: 'product-details-selector',
