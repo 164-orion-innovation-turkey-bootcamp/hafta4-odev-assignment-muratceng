@@ -294,6 +294,33 @@
       ],
       "price": 10265.49,
       "id": 5
+    },
+    {
+      "user_id": 1,
+      "product_ids": [
+        3
+      ],
+      "price": 643.4000000000001,
+      "id": 6
+    },
+    {
+      "user_id": 1,
+      "product_ids": [
+        3,
+        4,
+        2
+      ],
+      "price": 23755,
+      "id": 7
+    },
+    {
+      "user_id": 1,
+      "product_ids": [
+        1,
+        2
+      ],
+      "price": 10265.49,
+      "id": 8
     }
   ]
 }

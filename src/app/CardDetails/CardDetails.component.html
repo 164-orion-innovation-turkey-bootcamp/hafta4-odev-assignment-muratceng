@@ -1,7 +1,7 @@
 <Navbar-selector></Navbar-selector>
 
 <div class="container mt-5"  *ngIf="products.length>0">
-    <table class="table">
+    <table class="table" >
         <thead>
           <tr>
             <th scope="col">Product Title</th>
@@ -10,8 +10,8 @@
             <th scope="col">Delete Product</th>
           </tr>
         </thead>
-        <tbody>
-          <tr *ngFor="let item of products">
+        <tbody > 
+          <tr *ngFor="let item of products" >
             <td (click)="goProductDetails(item.id)" class="title">{{item.title}}</td>
             <td>{{item.price | currency:'TRY '}}</td>
             <td>
@@ -26,6 +26,9 @@
 <h1>Total price: {{totalPrice | currency:'TRY '}}</h1>
 <button (click)="setOrder()" class="btn btn-primary mb-5">Approval your order</button>
 <button (click)="goHome()" class="btn btn-primary mb-5 ms-5">Back To Shopping</button>
+<div *ngIf="showMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+  Your order is successful
+</div>
 </div>
   
   <div *ngIf="!(products.length>0)" class="w-100 h-100 d-flex align-items-center justify-content-center" >

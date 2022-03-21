@@ -11,9 +11,14 @@
 
     <div class="col-sm-12 col-md-6 col-lg-6 mt-5">
       <p>{{ product.description }}</p>
-      <p>Price : {{ product.price }}</p>
-      <div>
-        <button (click)="addToCard" class="btn btn-primary">Add To Card</button>
+      <p class="text-center mt-auto">
+        <span class="card-text price mt-auto"> {{product.price | currency:'TRY '}} </span>
+        </p>
+      <div class="text-center">
+        <button (click)="addToCard()" class="btn btn-primary">Add To Card</button>
+      </div>
+      <div *ngIf="showMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        Product added to Card
       </div>
     </div>
   </div>

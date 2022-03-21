@@ -8,60 +8,72 @@ import { ShoppingCardService } from "../services/ShoppingCard.service";
 import { UserService } from "../services/UserService.service";
 
 @Component({
-    selector:'CardDetails-selector',
-    templateUrl:'./CardDetails.component.html',
-    styleUrls:['./CardDetails.component.css']
+    selector: 'CardDetails-selector',
+    templateUrl: './CardDetails.component.html',
+    styleUrls: ['./CardDetails.component.css']
 })
-export class CardDetailsComponent implements OnInit{
-    products=this.cardService.getItems();   
-    totalPrice=this.cardService.getTotalPrice();
-    currentUser!:User;
-    constructor(private cardService:ShoppingCardService, private router:Router,private orderService:OrderService,private userService:UserService){}
+export class CardDetailsComponent implements OnInit {
+    products = this.cardService.getItems();
+    totalPrice = this.cardService.getTotalPrice();
+    currentUser!: User;
+    showMessage = false;
+    constructor(private cardService: ShoppingCardService, private router: Router, private orderService: OrderService, private userService: UserService) { }
     ngOnInit(): void {
-         //kullanıcı girişi varsa currentUser a eşitler yoksa giriş ekranına yönlendirir.
-         if (this.userService.isLogIn()) {
-            this.currentUser= this.userService.getLocalStorage();
+        //kullanıcı girişi varsa currentUser a eşitler yoksa giriş ekranına yönlendirir.
+        if (this.userService.isLogIn()) {
+            this.currentUser = this.userService.getLocalStorage();
         } else {
             this.router.navigate(['./SignIn'])
         }
     }
 
-    deleteProduct(title:String){
+    deleteProduct(title: String) {
         console.log(title);
-        this.products=this.cardService.deleteFromCard(title);
-        this.totalPrice=this.cardService.getTotalPrice();
+        this.products = this.cardService.deleteFromCard(title);
+        this.totalPrice = this.cardService.getTotalPrice();
     }
 
-    decreaseQuantity(item:ShoppingCardItem){
+    decreaseQuantity(item: ShoppingCardItem) {
         item.quantity--;
-        this.products= this.cardService.updateItem(item);
-        this.totalPrice=this.cardService.getTotalPrice();
+        this.products = this.cardService.updateItem(item);
+        this.totalPrice = this.cardService.getTotalPrice();
     }
 
-    increaseQuantity(item : ShoppingCardItem){
+    increaseQuantity(item: ShoppingCardItem) {
         item.quantity++;
-        this.products= this.cardService.updateItem(item);
-        this.totalPrice=this.cardService.getTotalPrice();
+        this.products = this.cardService.updateItem(item);
+        this.totalPrice = this.cardService.getTotalPrice();
     }
 
-    goHome(){
+    goHome() {
         this.router.navigate(['./Dashboard'])
     }
 
-    goProductDetails(id:number){
+    goProductDetails(id: number) {
         console.log("tıklandı")
-        this.router.navigate(['Product/Details',id])
+        this.router.navigate(['Product/Details', id])
     }
 
-    setOrder(){
-        let order ={
-            user_id : this.currentUser.id,
-            product_ids:this.cardService.getProductIdList(),
-            price:this.cardService.getTotalPrice()
+    setOrder() {
+        let order = {
+            user_id: this.currentUser.id,
+            product_ids: this.cardService.getProductIdList(),
+            price: this.cardService.getTotalPrice()
         }
-        this.orderService.addOrder(order).subscribe((res)=>{
+        this.orderService.addOrder(order).subscribe((res) => {
             console.log(res);
         });
-        this.products=this.cardService.clearCart();
+        this.showMessage = true;
+        this.messageTimer();
+        setTimeout(() => {
+        this.products = this.cardService.clearCart();
+            
+        }, 1000);
+    }
+
+    messageTimer() {
+        setTimeout(() => {
+            this.showMessage = false;
+        }, 1000);
     }
 }
