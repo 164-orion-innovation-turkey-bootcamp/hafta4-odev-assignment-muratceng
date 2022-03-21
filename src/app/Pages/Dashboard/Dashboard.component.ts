@@ -40,34 +40,38 @@ export class DashboardComponent implements OnInit {
         this.createForm();
     }
 
+    //searchFormu oluşturur.
     createForm() {
         this.searchForm = new FormGroup({
             search: new FormControl(null, [Validators.required])
         })
     }
 
-
+    //formun submit durumda çalışır.
     onSubmit() {
-        console.log(this.searchForm.get('search')?.value);
         this.filterByName(this.searchForm.get('search')?.value);
     }
 
+    //spet detayına yönlendirir.
     GoDetails() {
         this.router.navigate(['./CardDetails'])
     }
 
+    //Kategori filtrelemek için kullanılır.
     filterMainCategory(filterText:string){
         this.productService.filterByMainCategory(filterText).subscribe((res)=>{
             this.productList = res as Product[];
         })
     }
 
+    // Kategori filtrelemek için kullanılır.
     filterSubCategory(filterText:string){
         this.productService.filterBySubCategory(filterText).subscribe((res)=>{
             this.productList = res as Product[];
         })
     }
 
+    // Ürün başlığına göre filtreleme yapar.
     filterByName(filterText:string){
         this.productService.filterByName(filterText).subscribe((res)=>{
             this.productList = res as Product[];

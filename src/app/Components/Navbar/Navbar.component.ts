@@ -13,7 +13,6 @@ export class NavbarComponent implements OnInit{
     faShoppinCard = faCartShopping
     falogout = faSignOut
     shoppingCard=this.cardService.getItems();
-    totalPrice=this.cardService.getTotalPrice();
     ngOnInit(): void {
         
     }
@@ -24,21 +23,20 @@ export class NavbarComponent implements OnInit{
         this.router.navigate(['./SignIn'])
     }
 
+    // kullanıcıyı ana ekrana yönlendirir.
     goHome(){
         this.router.navigate(['./Dashboard'])
     }
 
-    cardDetails(){
-        this.router.navigate(['./CardDetails'])
-    }
-
-    deleteProduct(title:String){
-        console.log(title);
-        this.shoppingCard=this.cardService.deleteFromCard(title);
-        this.totalPrice=this.cardService.getTotalPrice();
-    }
-
+    // Sepetin detay sayfasına yönlendirir.
     goDetails(){
         this.router.navigate(['./CardDetails'])
     }
+
+    // Sepetteki ürünü siler.
+    deleteProduct(title:String){
+        console.log(title);
+        this.shoppingCard=this.cardService.deleteFromCard(title);
+    }
+    
 }

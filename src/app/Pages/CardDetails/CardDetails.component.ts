@@ -27,33 +27,38 @@ export class CardDetailsComponent implements OnInit {
         }
     }
 
+    // sepetteki ürünü siler sayfadaki ürünleri ve toplam fiyatı günceller.
     deleteProduct(title: String) {
         console.log(title);
         this.products = this.cardService.deleteFromCard(title);
         this.totalPrice = this.cardService.getTotalPrice();
     }
 
+    // ürünün adetini azaltır ve buna bağlı güncellemeleri yapar
     decreaseQuantity(item: ShoppingCardItem) {
         item.quantity--;
         this.products = this.cardService.updateItem(item);
         this.totalPrice = this.cardService.getTotalPrice();
     }
-
+   
+    // ürünün adetini artırır. ve buna bağlı güncellemeleri yapar
     increaseQuantity(item: ShoppingCardItem) {
         item.quantity++;
         this.products = this.cardService.updateItem(item);
         this.totalPrice = this.cardService.getTotalPrice();
     }
 
+    // ana sayfaya yönlendirir.
     goHome() {
         this.router.navigate(['./Dashboard'])
     }
 
+    // ürün detay sayfasına yönlendirir.
     goProductDetails(id: number) {
-        console.log("tıklandı")
         this.router.navigate(['Product/Details', id])
     }
 
+    // OrderService kullanarak orderi database e geçirir.
     setOrder() {
         let order = {
             user_id: this.currentUser.id,
@@ -71,6 +76,7 @@ export class CardDetailsComponent implements OnInit {
         }, 1000);
     }
 
+    // ekrana çıkan işlem başarılı mesajını zamanlar.
     messageTimer() {
         setTimeout(() => {
             this.showMessage = false;

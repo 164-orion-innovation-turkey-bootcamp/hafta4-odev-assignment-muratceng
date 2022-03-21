@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { ShoppingCardItem } from "src/app/models/ShoppingCardItem.model";
 import { ShoppingCardService } from "src/app/services/ShoppingCard.service";
 
 
@@ -17,22 +18,20 @@ export class CardComponent implements OnInit{
         
     }
 
+    // ürün detay sayfasına yönderir.
     goDetails(){
         this.router.navigate(['Product/Details',this.product.id]);
     }
 
+    //ShoppingCardService i kullanarak shopping carda item ekler
     addToCard(){
-        let tmp={
-            title : this.product.title,
-            price:this.product.price,
-            quantity:1,
-            id:this.product.id
-        }
-        this.cardService.addToCard(tmp);
+        let item= new ShoppingCardItem(this.product.title,this.product.price,1,this.product.id)
+        this.cardService.addToCard(item);
         this.showMessage=true;
         this.messageTimer();
     }
 
+    // Sepete eklendi mesajının kaybolması için kurulan timeout.
     messageTimer(){
         setTimeout(() => {
             this.showMessage=false;

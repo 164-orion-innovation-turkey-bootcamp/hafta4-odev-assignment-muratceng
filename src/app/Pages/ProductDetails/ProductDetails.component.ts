@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ShoppingCardItem } from 'src/app/models/ShoppingCardItem.model';
 import { User } from 'src/app/models/User.model';
 import { UserService } from 'src/app/services/UserService.service';
 import { Product } from '../../models/Product.model';
@@ -35,18 +36,15 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
+  // ürün sepetine item ekler
   addToCard() {
-    let tmp = {
-      title: this.product.title,
-      price: this.product.price,
-      quantity: 1,
-      id: this.product.id
-    }
-    this.cardService.addToCard(tmp);
+    let item = new ShoppingCardItem(this.product.title,this.product.price,1, this.product.id)
+    this.cardService.addToCard(item);
     this.showMessage = true;
     this.messageTimer();
   }
 
+  // Mesajın süresini zamanlar.
   messageTimer() {
     setTimeout(() => {
       this.showMessage = false;
