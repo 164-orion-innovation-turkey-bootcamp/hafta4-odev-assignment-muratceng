@@ -12,17 +12,19 @@ import { UserService } from "src/app/services/UserService.service";
 export class SignInComponent implements OnInit {
     constructor(private userService: UserService, private router: Router) { }
 
-    users : User[]=[]
+    users : User[]=[];
+    signInForm!:FormGroup;
     errors: String = '';
 
     ngOnInit(): void {
-
         //Kullanıcı girişi varsa sayfayı dashboarda yönlendirir.
         if(this.userService.isLogIn()){
             console.log("kullanıcı var")
             this.router.navigate(['./Dashboard'])
         }
         
+        this.createForm();
+
         //kullanıcı listesi doldurulur.
         this.userService.getUserList().subscribe((res) => {
             this.users = res as User[];
@@ -30,10 +32,13 @@ export class SignInComponent implements OnInit {
     }
 
     //formgroup tanımlanmıştır ve her alan için validasyon işlemleri tanımlanmıştır.
-    signInForm = new FormGroup({
-        email: new FormControl(null, [Validators.required, Validators.email]),
-        password: new FormControl(null, [Validators.required])
-    })
+    createForm(){
+        this.signInForm = new FormGroup({
+            email: new FormControl(null, [Validators.required, Validators.email]),
+            password: new FormControl(null, [Validators.required])
+        })
+    }
+    
 
     //kullanıcı eğer kullanıcı listesinde varsa local storage e yazılır ve dashboarda yönlendirilir.
     onSubmit() {

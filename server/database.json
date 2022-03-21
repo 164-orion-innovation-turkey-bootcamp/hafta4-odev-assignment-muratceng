@@ -67,7 +67,7 @@
       "description": "Takım İçeriği: 1 köşe koltuk Sevk: Tahmini sevk süresi 10-15 iş günüdür. Nakliye Durumu:Ürünler bina önüne teslim edilmektedir. Köylereteslimat yapılmamaktadır. Şehir veya ilçe merkezlerinden teslim alabilirsiniz Kumaş İçeriği: Poliüretan ve akrilik türevlerinden oluşan polyesteriçerikli kumaş kullanılmıştır. Oturum Minderi Malzemesi 30 DNS gri sünger kullanılmıştır İskelet Malzemesi: Gürgen ağacından oluşmaktadır. Ayak Rengi: Beyaz + Ceviz + siyah olarak değiştirilebilir Yön: Ters ve Düz olarak yöndeğiştirilebilir. Ayak Tipi: Yerden Yüksek 10 cm Ek Bilgiler: Koltuk ayak kısımları plastiktir ve zemine zarar vermez.Kalitesi oldukça yüksektir. 2- 2 yıl çökmeme garantili oturum.30 DNS 12 cm sünger kullanılmaktadır. 3- Kullanılan kumaşların tamamıithal silinebilir kumaşlardır. Sabunlu bez ile silinebilir ve arkasındankurulayarak temizlik işlemi sonlandırılır. Lekelere karşı dayanıklı ve sonderece kaliteli kumaşlardır. 4- Ürün ile birlikte 4 Adet kırlentgönderilmektedir. Kırlentler 45x45 cm ölçülerindedir. Ürün Ölçüleri Köşe Ölçüleri Yükseklik: 80 cm / Genişlik:230/280cm / Derinlik: 90 cm Yatak Ölçüleri Genişlik: 190 cm / Derinlik: 125cm KOLLU KISIM DIŞTAN DIŞA 230 CM KOLSUZ KISIM DIŞTAN DIŞA 280 CM",
       "images": ["https://cdn.dsmcdn.com/ty110/product/media/images/20210430/19/84146139/169074353/1/1_org_zoom.jpg","https://cdn.dsmcdn.com/ty110/product/media/images/20210430/19/84146139/169074353/2/2_org_zoom.jpg","https://cdn.dsmcdn.com/ty110/product/media/images/20210430/19/84146139/169074353/3/3_org_zoom.jpg"],
       "price": 4126.32,
-      "maincategory": "Home&furniture",
+      "maincategory": "HomeandFurniture",
       "category": "Furniture"
     },
     {
@@ -98,7 +98,7 @@
       "images": ["https://cdn.dsmcdn.com/ty349/product/media/images/20220307/9/63895027/395070985/2/2_org_zoom.jpg","https://cdn.dsmcdn.com/ty349/product/media/images/20220307/9/63895027/395070985/3/3_org_zoom.jpg"],
       "price": 289.99,
       "maincategory": "Clothes",
-      "category": "jacket"
+      "category": "Jacket"
     },
     {
       "id": 6,
@@ -117,7 +117,7 @@
       "description": "Tulu Porselen 24 Parça 6 Kişilik Yemek Takımı 6 Adet Servis Tabak 6 Adet Yemek Tabak 6 Adet Pasta Tabak 6 Adet Çukur Kase Porselen Üründür-Bulaşık Makinesinde Yıkanabilir",
       "images": ["https://cdn.dsmcdn.com/ty126/product/media/images/20210609/19/98053610/185593817/1/1_org_zoom.jpg","https://cdn.dsmcdn.com/ty128/product/media/images/20210609/19/98053610/185593817/2/2_org_zoom.jpg","https://cdn.dsmcdn.com/ty126/product/media/images/20210609/19/98053610/185593817/3/3_org_zoom.jpg"],
       "price": 429,
-      "maincategory": "Home&Furniture",
+      "maincategory": "HomeandFurniture",
       "category": "Dinner set"
     },
     {
@@ -167,7 +167,7 @@
       "description": "En:52cm,Boy:172cm. Boyu boyu dilediğiniz şekilde ayarlanabilmektedir.Ürünümüzde, 3 adet ampul yeri bulunmaktadır.Ürün duy tipi:E27,olup,led ampul kullanabilme özelliğine sahiptir.Ürün meteryali Metal dir.Ürünümüz, siyah boyalıdır.Kullanım alanı Genç odası,Oturma odası,Yatak odası için uygundur. Ürün kuruluma hazır şekilde demonte edilmiştir.",
       "images": ["https://cdn.dsmcdn.com/ty185/product/media/images/20210928/10/136966804/172234694/1/1_org_zoom.jpg","https://cdn.dsmcdn.com/ty185/product/media/images/20210928/10/136966804/172234694/2/2_org_zoom.jpg"],
       "price": 359.99,
-      "maincategory": "Home&Furniture",
+      "maincategory": "HomeandFurniture",
       "category": "Lamp"
     },
     {
@@ -202,16 +202,18 @@
     }
     
   ],
-  "cards":[
+  "orders":[
     {
       "id":1,
       "user_id":1,
-      "products":[1,2,3]
+      "products":[1,2,3],
+      "price":4126.32
     },
     {
       "id":2,
       "user_id":2,
-      "products":[1,2,3]
+      "products":[1,2,3],
+      "price":4126.32
     }
   ]
 }
