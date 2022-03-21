@@ -1,43 +1,58 @@
-# 4. Hafta Ödevi
+# E-commerce web application with angular
 
-Ürün satışının, kullanıcı kaydının ve girişinin yapıldığı, web uygulaması geliştirilecek.
+In this project, an e-commerce web application was developed where users can register, login and shop.
+
+# Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-muratceng
+```
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start Json-Server
+
+```bash
+  npm run start-server
+```
+
+Start Server
+
+```bash
+  npm run start
+```
+
+# Used technologies and extensions
+
+HTML, CSS, Angular, Typescript, Javascript, Bootstrap, Json-server, ng-bootstrap, fontawesome
+
+# Functionalities
+
+• The product card contains the picture, name, description and price of the products.
+
+• On the detail page of the products, there is a larger pictures of the product in carousel, price and a description text.
+
+• Products can be filtered by category.
+
+• There is a text input and products can be filtered by title of product.
+
+• The user cannot see the products without registering and logging into the system.
+
+• If the user enters a meaningless url, they will be redirected to the notfound page.
+
+• The app supports responsive design.
 
 
-<strong>Fonksiyoneliteler: </strong>
+# ScreenShots
 
-• Uygulama responsive tasarımı desteklemeli, mobil ve bilgisayar ekranlarına uyumlu 
-çalışmalı (ui component frameworkleri, libraryleri kullanılabilir)  
-• Kullanıcılar uygulamaya üye olabilmeli ve giriş yapabilmeli (json dosyasına kayıt 
-oluşturulup, json dosyasından doğrulama yapılabilir, ya da ekstra bir api yazılabilir)  
-• Ürün kartında bulunması gerekenler; ürünlerin resmi, adı, açıklaması ve fiyatı  
-• Ürün listesi ana sayfada gösterilmeli, kullanıcılar isterlerse ürünlerin detayına, 
-ürünlerin üzerine tıklayarak bakabilmeli  
-• Ürünlerin detay sayfasında, ürünün daha büyük bir resmi ve daha detaylı bir açıklama 
-metni olmalı  
-• Ürünlerin filtrelenmesi için; kategori seçeneği (dropdown, selector, kategorileri siz 
-belirlemelisiniz) ve bir arama çubuğu oluşturulmalı, anahtar kelimesinin ürün adında 
-geçip geçmediğine bakılmalı  
-• Ürün detayına gidilirken, sayfa yönlendirilmesi (routing) yapılmalı  
-• Ürünler kendinizin belirleyeceği bir json kaynak dosyasından alınmalı  
-• Ürünler sepete eklenip daha sonrasında satış işlemi gerçekleştirilmeli  
-• Satış işlemi için ayrı bir json dosyasına log kaydı atılması yeterli  
-• Kullanıcı sisteme giriş yapmadan ürünleri görmemeli  
-
-<strong>Gereklilikler: </strong>
-
-• Reactive form yaklaşımı kullanılmalı  
-• Form işlemlerinde validasyon yönetimi yapılmalı ve kullanıcı dostu bir uyarı mesajı 
-üretilmeli  
-• Http istekleri için HttpClient paketi kullanılmalı  
-• Comment kullanımına dikkat edilmeli  
-• TypeScript özelliklerinden type ve access modifiers kullanımına dikkat edilmeli  
-
-
-<strong>Ekstralar: </strong>
-
-• Ürünlerin detay kısmında, ürün ile ilgili oluşturulacak dummy(sahte) yorumların ve 
-değerlendirmelerin görüntülenmesi  
-• Component mimarisinin anlaşılır, tekrar kullanılabilecek şekilde kurgulanması  
-
-
-Teknolojiler: Angular (13), JavaScript, TypeScript
+![signIn](./src/assets/signin.png)
+![signUp](./src/assets/signup.png)
+![products](./src/assets/Products.png)
+![products2](./src/assets/Products2.png)
+![shoppingCard](./src/assets/ShoppingCard.png)
+![notFound](./src/assets/NotFound.png)
