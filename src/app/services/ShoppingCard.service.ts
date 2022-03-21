@@ -72,7 +72,6 @@ export class ShoppingCardService{
         for(let i=0;i<this.products.length;i++){
             products.push({id:this.products[i].id, quantity:this.products[i].quantity});
         }
-        console.log(products);
         return products;
     }
     

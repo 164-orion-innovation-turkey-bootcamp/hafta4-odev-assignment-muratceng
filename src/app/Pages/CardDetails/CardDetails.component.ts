@@ -65,7 +65,6 @@ export class CardDetailsComponent implements OnInit {
             products: this.cardService.getProductIdQuantityList(),
             price: this.cardService.getTotalPrice()
         }
-        console.log(order);
         this.orderService.addOrder(order).subscribe((res) => {
             console.log(res);
         });

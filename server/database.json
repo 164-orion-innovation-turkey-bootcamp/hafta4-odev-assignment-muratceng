@@ -291,6 +291,44 @@
       ],
       "price": 5289.53,
       "id": 2
+    },
+    {
+      "user_id": 1,
+      "products": [
+        {
+          "id": 3,
+          "quantity": 4
+        },
+        {
+          "id": 2,
+          "quantity": 3
+        },
+        {
+          "id": 6,
+          "quantity": 1
+        }
+      ],
+      "price": 20779.339999999997,
+      "id": 3
+    },
+    {
+      "user_id": 1,
+      "products": [
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "quantity": 2
+        },
+        {
+          "id": 4,
+          "quantity": 2
+        }
+      ],
+      "price": 47381.32,
+      "id": 4
     }
   ]
 }
