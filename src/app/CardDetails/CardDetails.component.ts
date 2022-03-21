@@ -39,8 +39,8 @@ export class CardDetailsComponent implements OnInit{
         this.router.navigate(['./Dashboard'])
     }
 
-    goProductDetails(id:Number){
-        this.router.navigate(['./ProductDetails',id])
+    goProductDetails(id:number){
+        console.log("tıklandı")
+        this.router.navigate(['Product/Details',id])
     }
-
 }

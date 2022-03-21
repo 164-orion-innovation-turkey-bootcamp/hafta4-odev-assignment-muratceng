@@ -25,7 +25,8 @@ export class CardComponent implements OnInit{
         let tmp={
             title : this.product.title,
             price:this.product.price,
-            quantity:1
+            quantity:1,
+            id:this.product.id
         }
         this.cardService.addToCard(tmp);
         this.showMessage=true;

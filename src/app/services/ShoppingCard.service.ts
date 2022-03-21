@@ -47,6 +47,7 @@ export class ShoppingCardService{
 
     clearCart(){
         this.products=[];
+        localStorage.removeItem('shoppingCard');
         return this.products;
     }
 
@@ -71,4 +72,5 @@ export class ShoppingCardService{
         }
         return price;
     }
+    
 }

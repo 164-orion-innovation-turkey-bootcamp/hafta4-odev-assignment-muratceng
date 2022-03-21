@@ -12,7 +12,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of products">
-            <td>{{item.title}}</td>
+            <td (click)="goProductDetails(item.id)" class="title">{{item.title}}</td>
             <td>{{item.price | currency:'TRY '}}</td>
             <td>
               <button *ngIf="item.quantity==1" disabled (click)="decreaseQuantity(item)">-</button>
@@ -29,10 +29,9 @@
 <button (click)="goHome()" class="btn btn-primary mb-5 ms-5">Back To Shopping</button>
 </div>
   
-  <div *ngIf="!(products.length>=1)" class="w-100 h-100 d-flex align-items-center justify-content-center" >
+  <div *ngIf="!(products.length>0)" class="w-100 h-100 d-flex align-items-center justify-content-center" >
     <div class="container w-25 ">
   <p>There are no items in your Shopping Card
-    <span></span>
   </p>
   <button (click)="goHome()" class="btn btn-primary ">Back To Shopping</button>
     </div>
