@@ -2,7 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Product } from "../models/Product.model";
 import { ShoppingCardItem } from "../models/ShoppingCardItem.model";
+import { User } from "../models/User.model";
+import { OrderService } from "../services/OrderService.service";
 import { ShoppingCardService } from "../services/ShoppingCard.service";
+import { UserService } from "../services/UserService.service";
 
 @Component({
     selector:'CardDetails-selector',
@@ -12,9 +15,15 @@ import { ShoppingCardService } from "../services/ShoppingCard.service";
 export class CardDetailsComponent implements OnInit{
     products=this.cardService.getItems();   
     totalPrice=this.cardService.getTotalPrice();
-    constructor(private cardService:ShoppingCardService, private router:Router){}
+    currentUser!:User;
+    constructor(private cardService:ShoppingCardService, private router:Router,private orderService:OrderService,private userService:UserService){}
     ngOnInit(): void {
-
+         //kullanıcı girişi varsa currentUser a eşitler yoksa giriş ekranına yönlendirir.
+         if (this.userService.isLogIn()) {
+            this.currentUser= this.userService.getLocalStorage();
+        } else {
+            this.router.navigate(['./SignIn'])
+        }
     }
 
     deleteProduct(title:String){
@@ -42,5 +51,17 @@ export class CardDetailsComponent implements OnInit{
     goProductDetails(id:number){
         console.log("tıklandı")
         this.router.navigate(['Product/Details',id])
+    }
+
+    setOrder(){
+        let order ={
+            user_id : this.currentUser.id,
+            product_ids:this.cardService.getProductIdList(),
+            price:this.cardService.getTotalPrice()
+        }
+        this.orderService.addOrder(order).subscribe((res)=>{
+            console.log(res);
+        });
+        this.products=this.cardService.clearCart();
     }
 }

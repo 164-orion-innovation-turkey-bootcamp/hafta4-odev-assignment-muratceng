@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
 
     createForm() {
         this.searchForm = new FormGroup({
-            search: new FormControl(null, [Validators.min(1)])
+            search: new FormControl(null, [Validators.required])
         })
     }
 
@@ -71,6 +71,6 @@ export class DashboardComponent implements OnInit {
     filterByName(filterText:string){
         this.productService.filterByName(filterText).subscribe((res)=>{
             this.productList = res as Product[];
-        })
+        })    
     }
 }

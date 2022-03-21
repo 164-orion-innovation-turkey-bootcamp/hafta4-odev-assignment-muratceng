@@ -39,6 +39,14 @@ export class ShoppingCardService{
         this.AddLocalStorage();
         return this.products;
     }
+
+    getProductIdList(){
+        let product_ids=[];
+        for(let i=0;i<this.products.length;i++){
+            product_ids.push(this.products[i].id);
+        }
+        return product_ids;
+    }
     
     getItems(){
         return this.products;

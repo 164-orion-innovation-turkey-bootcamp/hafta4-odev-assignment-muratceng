@@ -15,8 +15,7 @@
             <td (click)="goProductDetails(item.id)" class="title">{{item.title}}</td>
             <td>{{item.price | currency:'TRY '}}</td>
             <td>
-              <button *ngIf="item.quantity==1" disabled (click)="decreaseQuantity(item)">-</button>
-                <button *ngIf="item.quantity>1" (click)="decreaseQuantity(item)">-</button>
+                <button [disabled]="item.quantity==1" (click)="decreaseQuantity(item)">-</button>
                 <input type="number" value={{item.quantity}} id="number" disabled="false" min="0" max="100" style="width: 40px; text-align: center;"/>
                 <button  (click)="increaseQuantity(item)">+</button>
             </td>
@@ -25,7 +24,7 @@
         </tbody>
       </table>
 <h1>Total price: {{totalPrice | currency:'TRY '}}</h1>
-<button class="btn btn-primary mb-5">Approval your order</button>
+<button (click)="setOrder()" class="btn btn-primary mb-5">Approval your order</button>
 <button (click)="goHome()" class="btn btn-primary mb-5 ms-5">Back To Shopping</button>
 </div>
   
