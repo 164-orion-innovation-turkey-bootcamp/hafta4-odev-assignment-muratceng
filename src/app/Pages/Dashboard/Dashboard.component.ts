@@ -73,4 +73,10 @@ export class DashboardComponent implements OnInit {
             this.productList = res as Product[];
         })    
     }
+
+    getAll(){
+        this.productService.getProductList().subscribe((res)=>{
+            this.productList = res as Product[];
+        })
+    }
 }

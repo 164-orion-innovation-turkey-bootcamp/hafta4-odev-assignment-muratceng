@@ -9,6 +9,8 @@
     </div>
     </div>
 
+  <button (click)="getAll()" class="btn btn-primary"> See All</button>
+
   <form [formGroup]="searchForm"(ngSubmit)="onSubmit()">
     <input type="text" class="" placeholder="Search"  formControlName="search">
     <button type="submit" [disabled]="!searchForm.valid" class="btn btn-primary ms-1"><span><fa-icon [icon]="faSearch"></fa-icon></span> Search</button>
