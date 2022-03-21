@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './Components/Carousel/Carousel.component';
 import { CardDetailsComponent } from './Pages/CardDetails/CardDetails.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NotFoundComponent } from './Pages/NotFound/NotFound.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NavbarComponent,
     FooterComponent,
     CarouselComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

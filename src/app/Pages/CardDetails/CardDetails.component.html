@@ -1,6 +1,6 @@
 <Navbar-selector></Navbar-selector>
 
-<div class="container mt-5"  *ngIf="products.length>0">
+<div class="container mt-5"  *ngIf="products.length>0" style="height: 100vh; width: 100vw;">
     <table class="table" >
         <thead>
           <tr>
@@ -19,7 +19,7 @@
                 <input type="number" value={{item.quantity}} id="number" disabled="false" min="0" max="100" style="width: 40px; text-align: center;"/>
                 <button  (click)="increaseQuantity(item)">+</button>
             </td>
-            <td><button (click)="deleteProduct(item.title)" class="btn btn-danger text-center"> X </button></td>
+            <td><button (click)="deleteProduct(item.title)" class="btn btn-danger text-center"><fa-icon [icon]="faDelete"></fa-icon></button></td>
           </tr>
         </tbody>
       </table>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { Product } from "../../models/Product.model";
 import { ShoppingCardItem } from "../../models/ShoppingCardItem.model";
 import { User } from "../../models/User.model";
@@ -17,6 +18,7 @@ export class CardDetailsComponent implements OnInit {
     totalPrice = this.cardService.getTotalPrice();
     currentUser!: User;
     showMessage = false;
+    faDelete = faDeleteLeft;
     constructor(private cardService: ShoppingCardService, private router: Router, private orderService: OrderService, private userService: UserService) { }
     ngOnInit(): void {
         //kullanıcı girişi varsa currentUser a eşitler yoksa giriş ekranına yönlendirir.
